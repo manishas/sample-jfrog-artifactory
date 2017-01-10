@@ -1,39 +1,25 @@
 resources:
 ###################### NATIVE WAR CI/CD RESOURCES #########################
-# jar trigger
-  - name: demo-war-trg
-    type: image
-    integration: avinci-dh
-    pointer:
-      sourceName: "sample.war"
-    seed:
-      versionName: "latest"
+## jar trigger
+  # - name: demo-war-trg
+  #   type: image
+  #   integration: avinci-dh
+  #   pointer:
+  #     sourceName: "sample.war"
+  #   seed:
+  #     versionName: "latest"
 
 # VM Cluster
   - name: demo-war-test-cls
     type: cluster
-    integration: demo-test-cls
-
-# Parameters to Run WAR
-  - name: demo-war-params
-    type: params
-    version:
-      params:
-        ENVIRONMENT: "FOO"
-
-# Parameters to Run WAR
-  - name: demo-war-params1
-    type: params
-    version:
-      params:
-        ENVIRONMENT: "BOO"
+    integration: manishas-samplejavatomcat-node-cluster
 
 # JFROG WAR reference
   - name: demo-war
     type: file
-    integration: avinci-jf
+    integration: manishas-jfrog
     pointer:
-      sourceName: builds/HelloWorld.war
+      sourceName: ship-generic/HelloWorld.war
     seed:
       versionName: initial
 

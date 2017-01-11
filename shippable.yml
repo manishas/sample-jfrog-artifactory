@@ -27,7 +27,7 @@ integrations:
       type: artifactory
 
   notifications:
-    - integrationName: manishas-samplejavatomcat-trig
+    - integrationName: manishas-samplejavatomcat-trigger
       type: webhook
       payload:
         - versionName=$BUILD_NUMBER
